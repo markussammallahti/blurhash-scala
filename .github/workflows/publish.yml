@@ -1,0 +1,23 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  release:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: olafurpg/setup-scala@v2
+      - name: Set version
+        run: echo "version := \"${GITHUB_REF/refs\/tags\//}\"" > version.sbt
+      - name: Test
+        run: sbt +test
+      - name: Publish
+        env:
+          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}
+          BINTRAY_PASS: ${{ secrets.BINTRAY_PASS }}
+        run: sbt +publish

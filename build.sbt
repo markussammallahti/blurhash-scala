@@ -1,7 +1,5 @@
 name := "blurhash-scala"
 
-version := "1.0"
-
 scalaVersion := "2.13.1"
 
 licenses += ("Apache-2.0", url("https://github.com/markussammallahti/blurhash-scala/blob/master/LICENSE"))
