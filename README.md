@@ -7,7 +7,7 @@ Scala implementation of [blurhash](https://github.com/woltapp/blurhash)
 build.sbt
 ```
 resolvers += Resolver.bintrayRepo("mrks", "maven")
-libraryDependencies += "mrks" %% "blurhash-scala" % "1.0"
+libraryDependencies += "mrks" %% "blurhash-scala" % "1.0.0"
 ```
 
 Example.scala
